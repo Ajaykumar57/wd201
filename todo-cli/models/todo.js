@@ -49,6 +49,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static async dueToday() {
+      // FILL IN HERE TO RETURN ITEMS DUE tODAY
       const dTI = await Todo.findAll({
         where: { dueDate: new Date() },
         order: [["id", "ASC"]],
@@ -70,6 +71,7 @@ module.exports = (sequelize, DataTypes) => {
    
 
     static async markAsComplete(id) {
+      // FILL IN HERE TO MARK AN ITEM AS COMPLETE
       await Todo.update(
         { completed: true },
         {
@@ -94,7 +96,7 @@ module.exports = (sequelize, DataTypes) => {
     completed: DataTypes.BOOLEAN
   }, {
     sequelize,
-    modelName: 'Todo1',
+    modelName: 'Todo',
   });
   return Todo;
 };
