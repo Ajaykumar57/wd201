@@ -1,33 +1,102 @@
-<!doctype html>
-<html lang = "en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset =" UTF-8 "/>
-    <meta name =" viewport "content =" width=device-width, initial-scale=1.0 "/>
-    <title> Todo </title>
-    <script src =" https://cdn.tailwindcss.com ">  </script>
-    <link rel = " stylesheet "href= "/css/styles.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List's</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #040404;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
 
-  </head>
- <body>
-    <div class="grid grid-cols-4 mn-6">
-      <div class =" col-start-4 col-span-2 ">
+        .form-group input[type="text"], 
+        .form-group input[type="date"] {
+            
+            padding: 15px;
+            border: 1px solid #7f9917;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .form-group input[type="text"]{
+            width: 160%;
+        }
+        .form-group input[type="date"]
+        {
+            width: 100%;
+        }
+        .form-group .btn {
+            width: 100%;
+            background-color: #0e0e0e ;
+        }
 
-        <%- include("header.ejs")%>
+        .list-group {
+            list-style: none;
+            padding: 0;
+        }
 
-        <form>
-          <div class =" flex gap-3 py-1">
-            <div class =" flex-auto ">
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-              <input type= "text"placeholder =" after "required class =" border border-yellow-500 text-yellow-600 rounded w-160 p-3"> </div>
-            <div class =" flex-auto ">
-              <input type="date "class=" border border-yellow-500 text-yellow-600 rounded w-160 p-3 leading-5 "></div>
-            <div class=" flex-none " >
-              <button type=" finish "class="bg-white-500 text-blue px-2 py-1 rounded font-medium "> sum </button></div>
-          </div>
-        </form>
+        .list-group-item .task {
+            flex-grow: 1;
+        }
 
-        <%- include("todos.ejs")%>
-        <%- include("footer.ejs")%></div>
+        .list-group-item .trash-icon {
+            display: none;
+            cursor: pointer;
+            color: #ff6347;
+        }
+
+        .list-group-item:hover .trash-icon {
+            display: block;
+        }
+      </style>
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+              <%- include("header.ejs") %>
+
+             
+                <form>
+                    <div class="form-group row">
+                        <div class="col-8">
+                            <input type="text" class="form-control" placeholder="What to add Next?" required>
+                        </div>
+                        <div class="col">
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-success">ADD GOAL</button>
+                        </div>
+                    </div>
+                </form>
+                <%- include("todos.ejs") %>
+                <%- include("footer.ejs") %>
+            </div>
+        </div>
     </div>
-  </body>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
