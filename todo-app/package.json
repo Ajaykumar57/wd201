@@ -1,7 +1,7 @@
 {
   "name": "todo-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "I love code node js. I'm an excellent in writting node js codes",
   "main": "index.js",
   "scripts": {
     "start": "nodemon -e js,ejs",
@@ -16,7 +16,7 @@
       "prettier --write ."
     ]
   },
-  "author": "hs",
+  "author": "Ajaykumar-AK",
   "license": "ISC",
   "devDependencies": {
     "ejs": "^3.1.9",
