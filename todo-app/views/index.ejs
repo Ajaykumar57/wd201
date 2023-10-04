@@ -10,24 +10,24 @@
 <body>
   <div class =" grid grid-cols-5 se-8">
   <div class =" col-start-2 col-span-1 ">
-  <%- include(" header.ejs ")%>
+  <%- include("header.ejs")%>
   <form>
-      <div class =" flex gap-3 py-2 ">
-          <div class =" flex-auto ">
+      <div class ="flex gap-3 py-2">
+          <div class ="flex-auto">
                 <input type= "text" placeholder ="Type your Todo" required class = " border border-white-400 text-white-800 rounded w-150 p-1 ">
           </div>
-           <div class = " flex-auto ">
+           <div class = "flex-auto">
               <input type ="date" class = " border border-white-400 text-white-800 rounded w-150 p-1 leading-4 ">
            </div>
-            <div class = " flex-none ">
-              <button type=" click ok "class = "bg-blue-600 text-yellow px-4 py-2 rounded font-medium "> Insert Todo</button>
+            <div class = "flex-none">
+              <button type="submit"class = "bg-blue-600 text-yellow px-4 py-2 rounded font-medium "> Insert Todo</button>
 
             </div>
           </div>
         </form>
 
-        <%- include(" todos.ejs ")%>
-        <%- include(" footer.ejs ")%>
+        <%- include("todos.ejs")%>
+        <%- include("footer.ejs")%>
 
       </div>
     </div>
